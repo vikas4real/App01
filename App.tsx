@@ -1,13 +1,20 @@
-import { SafeAreaView, StyleSheet, Text, View, useColorScheme } from 'react-native'
+import { SafeAreaView, ScrollView, StyleSheet, Text, View, useColorScheme } from 'react-native'
 import React from 'react'
+import FlatCards from './components/FlatCards'
+import ImageCard from './components/ImageCard'
+import BlogCard from './components/BlogCard'
+import ContactList from './components/ContactList'
 
-const App = ():JSX.Element => {
+const App = () => {
   const isDarkMode=useColorScheme()==="dark"
   return (
    <SafeAreaView style={styles.container}>
-    <View>
-      <Text style={isDarkMode?styles.whiteText:styles.darkText}>Hello</Text>
-    </View>
+    <ScrollView>
+    <FlatCards/>
+    <ImageCard/>
+    <BlogCard/>
+    <ContactList/>
+    </ScrollView>
    </SafeAreaView>
   )
 }
@@ -17,8 +24,6 @@ export default App
 const styles = StyleSheet.create({
   container:{
     flex:1,
-    alignItems:"center",
-    justifyContent:"center"
 
   },
   darkText:{
